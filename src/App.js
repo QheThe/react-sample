@@ -3,6 +3,7 @@ import React from 'react';
 import './App.css';
 import Index from './header/header'
 import LikeButton from './like/like'
+import CommentApp from './comments/comment'
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
       <LikeButton likedText='已赞' unlikedText='赞'/>
       <div>没有 props 配置</div>
       <LikeButton />
+      <div>评论app</div>
+      <CommentApp />
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello React</p>
