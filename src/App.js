@@ -8,6 +8,9 @@ function App() {
   return (
     <div className="App">
       <Index />
+      <div>props 配置</div>
+      <LikeButton likedText='已赞' unlikedText='赞'/>
+      <div>没有 props 配置</div>
       <LikeButton />
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
