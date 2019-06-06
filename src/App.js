@@ -4,6 +4,7 @@ import './App.css';
 import Index from './header/header'
 import LikeButton from './like/like'
 import CommentApp from './comments/comment'
+import Lifecircle from './lifecircle/lifecircle'
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
       <LikeButton />
       <div>评论app</div>
       <CommentApp />
+      <div>react 的生命周期</div>
+      <Lifecircle />
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello React</p>
