@@ -7,6 +7,7 @@ import CommentApp from './comments/comment'
 import Lifecircle from './lifecircle/lifecircle'
 import Clock from './clock/clock'
 import AutoFocus from './auto_focus/auto_focus'
+import RichText from './rich-text/rich-text'
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
       <hr/>
       <h1>自动聚焦</h1>
       <AutoFocus />
+      <hr/>
+      <RichText />
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello React</p>
