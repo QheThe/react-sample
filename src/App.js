@@ -4,17 +4,30 @@ import './App.css';
 import Index from './header/header'
 import LikeButton from './like/like'
 import CommentApp from './comments/comment'
+import Lifecircle from './lifecircle/lifecircle'
+import Clock from './clock/clock'
+import AutoFocus from './auto_focus/auto_focus'
 
 function App() {
   return (
     <div className="App">
       <Index />
+      <hr/>
+      <h1>props 配置示例</h1>
       <div>props 配置</div>
       <LikeButton likedText='已赞' unlikedText='赞'/>
       <div>没有 props 配置</div>
       <LikeButton />
-      <div>评论app</div>
+      <hr/>
+      <h1>评论app</h1>
       <CommentApp />
+      <hr/>
+      <h1>react 的生命周期</h1>
+      <Lifecircle />
+      <Clock />
+      <hr/>
+      <h1>自动聚焦</h1>
+      <AutoFocus />
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello React</p>

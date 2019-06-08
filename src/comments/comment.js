@@ -84,6 +84,10 @@ class CommentApp extends Component {
         {
           username: 'Quartz',
           userComment: '你萌好鸭!'
+        },
+        {
+          username: 'Quartz',
+          userComment: '你萌好鸭!'
         }
       ]
     }
