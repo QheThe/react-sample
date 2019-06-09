@@ -8,6 +8,7 @@ import Lifecircle from './lifecircle/lifecircle'
 import Clock from './clock/clock'
 import AutoFocus from './auto_focus/auto_focus'
 import RichText from './rich-text/rich-text'
+import Container from './container/container'
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
       <hr/>
       <h1>自动聚焦</h1>
       <AutoFocus />
+      <hr/>
+      <h1>容器</h1>
+      <Container />
       <hr/>
       <RichText />
       {/* <header className="App-header">
