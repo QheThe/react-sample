@@ -9,6 +9,11 @@ import Clock from './clock/clock'
 import AutoFocus from './auto_focus/auto_focus'
 import RichText from './rich-text/rich-text'
 import Container from './container/container'
+import PropCheck from './prop-check/prop-check'
+
+let obj = {
+  test: 'asd'
+}
 
 function App() {
   return (
@@ -35,6 +40,10 @@ function App() {
       <Container />
       <hr/>
       <RichText />
+      <hr/>
+      <h1>参数检查</h1>
+      <PropCheck val={obj}/>
+      <hr/>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello React</p>
