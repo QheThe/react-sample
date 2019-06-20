@@ -11,6 +11,7 @@ import RichText from './rich-text/rich-text'
 import Container from './container/container'
 import PropCheck from './prop-check/prop-check'
 import Context from './context/Context'
+import HighOrderComponent from './High-Order-Components/HighOrderComponent'
 
 let obj = {
   test: 'asd'
@@ -48,6 +49,8 @@ function App() {
       <h1>React context</h1>
       <Context />
       <hr/>
+      <h1>高阶组件</h1>
+      <HighOrderComponent />
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello React</p>
