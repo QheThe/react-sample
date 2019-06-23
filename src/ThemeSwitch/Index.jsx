@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Header from './Header'
 import Content from './Content'
+import ThemeSwitcher from './ThemeSwitcher'
 import PropTypes from 'prop-types'
 
 // 创建一个 store
@@ -47,7 +48,8 @@ class Theme extends Component {
         return (
            <div className="theme">
                <Header/>
-               <Content />
+               <Content/>
+               <ThemeSwitcher/>
            </div> 
         )
     }

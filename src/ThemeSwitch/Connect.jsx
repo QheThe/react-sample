@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-//函数式编程             将state映射到prop      要被包装的组件
-export const connect = (mapStateToProps) => (WrappedComponent) => {
+//函数式编程             将state映射到传入组件 prop                 要被包装的组件
+export const connect = (mapStateToProps, mapDispatchToProps) => (WrappedComponent) => {
     class Connect extends Component {
         // 验证 context 数据类型是否正确 （使用 context 必须）
         static contextTypes = {
@@ -26,11 +26,17 @@ export const connect = (mapStateToProps) => (WrappedComponent) => {
         _updateProps () {
             const { store } = this.context
             // 获取需要的 stateProps
-            let stateProps = mapStateToProps(store.getState())
+            let stateProps = mapStateToProps
+            ? mapStateToProps(store.getState(), this.props) 
+            : {} // 防止 mapStateToProps 没有传入
+            let dispatchProps = mapDispatchToProps
+            ? mapDispatchToProps(store.dispatch, this.props) 
+            : {} //  防止 mapDispatchToProps 没有传入
             // 触发 包装组件 再次包装
             this.setState({
                 allProps: {
                     ...stateProps,
+                    ...dispatchProps,
                     ...this.props
                 }
             })

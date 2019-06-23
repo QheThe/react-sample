@@ -12,6 +12,7 @@ import Container from './container/container'
 import PropCheck from './prop-check/prop-check'
 import Context from './context/Context'
 import HighOrderComponent from './High-Order-Components/HighOrderComponent'
+import Theme from './ThemeSwitch/Index'
 
 let obj = {
   test: 'asd'
@@ -51,6 +52,10 @@ function App() {
       <hr/>
       <h1>高阶组件</h1>
       <HighOrderComponent />
+      <hr/>
+      <h1>redux & 高阶组件</h1>
+      <Theme/>
+      <hr/>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello React</p>
