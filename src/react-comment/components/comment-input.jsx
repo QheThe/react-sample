@@ -22,6 +22,10 @@ class CommentInput extends Component {
     this.textarea.focus()
   }
 
+  handleUsernameBlur() {
+    this.props.onUsernameInputBlur()
+  }
+
   handleSubmit () {
     if (!this.state.username) return alert('请填写用户名')
     if (!this.state.userComment) return alert('请填写评论')

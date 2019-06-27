@@ -6,7 +6,7 @@ import commentsReducer from './reducers/comments'
 
 const store = createStore(commentsReducer)
 
-class finalCommentApp extends Component {
+class FinalCommentApp extends Component {
     render () {
         return (
             <Provider store={store}>
@@ -16,4 +16,4 @@ class finalCommentApp extends Component {
     }
 }
 
-export default finalCommentApp
+export default FinalCommentApp
