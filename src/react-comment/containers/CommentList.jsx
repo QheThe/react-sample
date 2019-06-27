@@ -67,6 +67,22 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        initComments: (commentIndex)
+        // 将 state 中的数据通过 prop 提供给 CommentListContainer
+        // 当从 LocalStorage 加载评论列表之后就会通过这个方法
+        // 将评论列表初始化到 state 当中
+       initComments: (comments) => {
+           dispatch(initComments(comments))
+       },
+        // 删除评论
+        onDeleteComment: (commentIndex) => {
+            dispatch(deleteComment(commentIndex))
+        }
     }
 }
+
+// 将 CommentListContainer connect 到 store
+// 会把 comments initComments onDeleteComment 传给 CommentListContainer
+export default connect({
+    mapStateToProps,
+    mapDispatchToProps
+})(CommentListContainer)
