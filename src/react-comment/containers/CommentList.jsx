@@ -6,10 +6,21 @@ import { initComments, deleteComment } from '../reducers/comments'
 
 // commentlistcontainer
 // 一个 Smart 组件，负责评论列表数据的加载、初始化、删除评论
-// 沟通 CommentList 和 state
+// 沟通 CommentList 和 store.state
 
 // 数据流向
 // store -> context -> connect -> CommentListContainer -> CommnetList
+
+// dispatch 流向
+
+// 创建 store
+// createStore reducer -> dispatch -> reducer -> store
+
+// 将 dispatch 传递给组件
+// reducer -> mapDispatchToProps -> connect mount -> this.prop
+
+// 当触发 dispatch 的时候
+// 触发 this.prop 上的 dispatch 时 dispatch -> reducer -> store
 
 class CommentListContainer extends Component {
     static propTypes = {
@@ -24,13 +35,13 @@ class CommentListContainer extends Component {
     }
 
     _loadComments () {
-        // 此时 state.comment 为 []
+        // 此时 store.state.comment 为 []
         // 从 LocalStorage 中加载评论
         let comments = localStorage.getItem('comments')
         comments = comments ? JSON.parse(comments) : []
         // this.props.initComments 
         // 是 connect 通过 prop 传进来的
-        // 初始化 state 中的 comments
+        // 初始化  store.state 中的 comments
         this.props.initComments(comments)
     }
 
@@ -46,19 +57,21 @@ class CommentListContainer extends Component {
         // 更新 localStorage 中的 comments
         localStorage.setItem('comments', JSON.stringify(newComments))
         if (this.props.onDeleteComment) {
-            // 更新 state 中的 comments
+            // 更新 store.state 中的 comments
             this.props.onDeleteComment(index)
         }
     }
 
     render () {
-        <CommnetList 
-        comments={this.props.comments}
-        onDeleteComment={this.handleDeleteComment} />
+        return (
+            <CommnetList 
+            comments={this.props.comments}
+            onDeleteComment={this.handleDeleteComment} />
+        )
     }
 }
 
-// 评论表从 state.comments 中获取
+// 评论表从 store.state.comments 中获取
 const mapStateToProps = (state) => {
     return {
         comment: state.comments
@@ -67,9 +80,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        // 将 state 中的数据通过 prop 提供给 CommentListContainer
+        // 将 store.state 中的数据通过 prop 提供给 CommentListContainer
         // 当从 LocalStorage 加载评论列表之后就会通过这个方法
-        // 将评论列表初始化到 state 当中
+        // 将评论列表初始化到 store.state 当中
        initComments: (comments) => {
            dispatch(initComments(comments))
        },

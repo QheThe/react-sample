@@ -14,6 +14,7 @@ import Context from './context/Context'
 import HighOrderComponent from './High-Order-Components/HighOrderComponent'
 import Theme from './ThemeSwitch/Index'
 import Theme2 from './ThemeSwitch-redux/Index'
+import finalCommentApp from './react-comment/index'
 
 let obj = {
   test: 'asd'
@@ -59,6 +60,9 @@ function App() {
       <hr/>
       <h1>redux</h1>
       <Theme2/>
+      <hr/>
+      <h1>finalCommentApp</h1>
+      <finalCommentApp/>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello React</p>

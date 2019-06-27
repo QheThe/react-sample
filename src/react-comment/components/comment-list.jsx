@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import Comment from './comment'
 
 class CommnetList extends Component {
   static propTypes = {
