@@ -30,11 +30,6 @@ class CommentInputContainer extends Component {
     }
 
     handleSubmitComment (comment) {
-        // 验证论数据
-        if (!comment) return
-        if (!comment.username) return alert('请输入用户名')
-        if (!comment.content) return alert('请输入评论内容')
-
         // 新增评论保存到 localStorage 中
         const { comments } = this.props
         const newComments = [...comments, comment]
@@ -53,7 +48,7 @@ class CommentInputContainer extends Component {
             <CommentInput
             username={this.state.username}
             onUsernameInputBlur={this._saveUsername.bind(this)}
-            onSibmit={this.handleSubmitComment.bind(this)}
+            onSubmit={this.handleSubmitComment.bind(this)}
             />
         )
     }

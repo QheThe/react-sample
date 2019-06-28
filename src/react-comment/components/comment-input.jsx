@@ -19,17 +19,19 @@ class CommentInput extends Component {
   }
 
   componentDidMount () {
+    this.setState({
+      username: this.props.username
+    })
     this.textarea.focus()
   }
 
   handleUsernameBlur() {
-    this.props.onUsernameInputBlur()
+    this.props.onUsernameInputBlur(this.state.username)
   }
 
   handleSubmit () {
     if (!this.state.username) return alert('请填写用户名')
     if (!this.state.userComment) return alert('请填写评论')
-    console.log(this.state)
     this.props.onSubmit(this.state)
   }
 

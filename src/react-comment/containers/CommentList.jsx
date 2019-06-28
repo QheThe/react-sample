@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import CommnetList from '../components/comment-list'
 import { initComments, deleteComment } from '../reducers/comments'
+import { string } from 'postcss-selector-parser';
 
 // commentlistcontainer
 // 一个 Smart 组件，负责评论列表数据的加载、初始化、删除评论
@@ -46,6 +47,7 @@ class CommentListContainer extends Component {
     }
 
     handleDeleteComment (index) {
+        window.alert(string(index))
         const { comments } = this.props
         // props 是不能变的，所以这里新建了一个删除了指定下标的评论列表
         const newComments = [
@@ -66,7 +68,7 @@ class CommentListContainer extends Component {
         return (
             <CommnetList 
             comments={this.props.comments}
-            onDeleteComment={this.handleDeleteComment} />
+            onDleteComment={this.handleDeleteComment.bind(this)} />
         )
     }
 }

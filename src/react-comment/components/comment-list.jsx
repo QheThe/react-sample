@@ -4,8 +4,12 @@ import Comment from './comment'
 
 class CommnetList extends Component {
   static propTypes = {
-    onDleteComment: PropTypes.func,
+    onDleteComment: PropTypes.func.isRequired,
     comments: PropTypes.array
+  }
+
+  handleDeleComment (index) {
+    this.props.onDleteComment(index)
   }
 
   render() {
@@ -14,7 +18,7 @@ class CommnetList extends Component {
         {
           this.props.comments.map((comment, i) => {
             return (
-              <Comment onDlete={this.props.onDleteComment} comment={comment} key={i}/>
+              <Comment onDlete={this.handleDeleComment.bind(this, i)} comment={comment} key={i}/>
             )
           })
         }

@@ -9,7 +9,8 @@ export default function(state, action) {
     switch (action.type) {
         case INIT_COMMENTS:
             // 初始化评论
-            return { comments: action.comments }
+            window.alert(JSON.stringify(action))
+            return { comments: action.comment }
         case ADD_COMMENT:
             // 添加评论
             return {
