@@ -9,7 +9,7 @@ export default function(state, action) {
     switch (action.type) {
         case INIT_COMMENTS:
             // 初始化评论
-            window.alert(JSON.stringify(action))
+            console.log(action)
             return { comments: action.comment }
         case ADD_COMMENT:
             // 添加评论
@@ -18,10 +18,13 @@ export default function(state, action) {
             }
         case DELETE_COMMENT:
             // 删除评论
+            console.log(action)
             return {
                 comments: [
-                    ...state.comments.slice(0, action.commentIndex),
-                    ...state.comments.slice(action.commentIndex + 1)
+                    // 截取 index 之前的元素 的元素
+                    ...state.comments.splice(0, action.commentIndex),
+                    // 截取 index 之后的元素 的元素
+                    ...state.comments.splice(action.commentIndex + 1)
                 ]
             }
         default:
