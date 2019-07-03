@@ -15,6 +15,7 @@ import HighOrderComponent from './High-Order-Components/HighOrderComponent'
 import Theme from './ThemeSwitch/Index'
 import Theme2 from './ThemeSwitch-redux/Index'
 import FinalCommentApp from './react-comment/index'
+import R1 from './router-sample/r1'
 
 let obj = {
   test: 'asd'
@@ -63,6 +64,9 @@ function App() {
       <hr/>
       <h1>finalCommentApp</h1>
       <FinalCommentApp/>
+      <hr/>
+      <h1>R1</h1>
+      <R1/>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello React</p>
